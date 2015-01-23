@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#yum -y update
+yum -y update
 
 rpm -ivh https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 sed -i -e "s/enabled *= *1/enabled=0/g" /etc/yum.repos.d/epel.repo
