@@ -43,6 +43,7 @@ chown -R nginx app/storage
 cp /vagrant/setup/nginx.conf /etc/nginx/nginx.conf
 cp /vagrant/setup/laravel.conf /etc/nginx/conf.d/laravel.conf
 
+rm -rf /etc/nginx/conf.d/default.conf
 
 service nginx start
 chkconfig nginx on
