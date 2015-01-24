@@ -28,10 +28,10 @@ cp /vagrant/setup/php-fpm.conf /etc/php-fpm.conf
 cp /vagrant/setup/www.conf /etc/php-fpm.d/www.conf
 
 
+cd /vagrant/public
+/usr/local/bin/composer create-project laravel/laravel mylaravel --prefer-dist
 
-/usr/local/bin/composer create-project laravel/laravel laravel-prj --prefer-dist
-
-cd laravel-prj
+cd mylaravel
 
 cp /vagrant/setup/app.php app/config/app.php
 
@@ -53,3 +53,9 @@ chkconfig php-fpm on
 
 service iptables stop
 
+sudo yum install -y mysql mysql-server
+/etc/init.d/mysqld restart
+chkconfig mysqld on
+
+
+ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions || true

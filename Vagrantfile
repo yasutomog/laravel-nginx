@@ -69,6 +69,10 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
 
+  #config.vm.synced_folder ".", "/vagrant", owner: "nginx", group: "nginx"
   config.vm.provision :shell, :path => "bootstrap.sh"
+
+  #command = "ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions || true"
+  #config.vm.provision "shell", inline: command
 
 end
